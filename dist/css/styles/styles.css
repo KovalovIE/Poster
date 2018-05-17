@@ -6039,3 +6039,10 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 .search-input {
   width: 60px;
   border: 0; }
+
+input[type=number] {
+  width: 64px; }
+
+.img-size {
+  width: 150px;
+  height: 100px; }
