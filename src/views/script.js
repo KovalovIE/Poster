@@ -39,13 +39,13 @@ var dishes = [
     }
 ]
 
-var menuList = document.getElementById('menu-list')
-var aside = document.getElementById('aside')
-var asideTable = document.getElementById('aside-table')
+var menuList = document.getElementById('menu-list');
+var aside = document.getElementById('aside');
+var send = document.getElementById('send-sum');
+var tableTotal = document.querySelector('.table-sum');
 
 dishes.forEach( function(dish) {
   var figure = document.createElement('figure');
-  //figure.setAttribute('onclick', 'myFunction()');
   var img = new Image();
   img.id = dish.id;
   img.src = dish.thumbnailUrl;
@@ -64,30 +64,62 @@ dishes.forEach( function(dish) {
   table.style.borderCollapse = 'collapse';
   table.style.width = '100%';
   table.setAttribute('id', 'myTable');
-for(var i = 0; i < 1; i++) {
-      var tr = document.createElement('tr');
-      table.appendChild(tr);
-      //tr.style.marginBottom = "5px";
-    for(var j = 0; j < 4; j++) {
-      var td = document.createElement('td');
-      tr.appendChild(td);
-      td.style.borderBottom = '1px solid black';      
-      //td.style.paddingLeft = '5px';
-      if (i === 0 && j === 0) {
-        td.appendChild(document.createTextNode('Наименование'));
-      } else if (i === 0 && j === 1) {
-        td.appendChild(document.createTextNode('Кол-во'));
-      } else if (i === 0 && j === 2){
-        td.appendChild(document.createTextNode('Цена'));
-      } else if (i === 0 && j === 3){
-        td.appendChild(document.createTextNode('Итого'));
+    for(var i = 0; i < 1; i++) {
+          var tr = document.createElement('tr');
+          table.appendChild(tr);
+          //tr.style.marginBottom = "5px";
+        for(var j = 0; j < 4; j++) {
+          var td = document.createElement('td');
+          tr.appendChild(td);
+          td.style.borderBottom = '1px solid black';      
+          //td.style.paddingLeft = '5px';
+          if (i === 0 && j === 0) {
+            td.appendChild(document.createTextNode('Наименование'));
+          } else if (i === 0 && j === 1) {
+            td.appendChild(document.createTextNode('Кол-во'));
+          } else if (i === 0 && j === 2){
+            td.appendChild(document.createTextNode('Цена'));
+          } else if (i === 0 && j === 3){
+            td.appendChild(document.createTextNode('Итого'));
+          }
+        }
       }
-    }
-  }
 
-// function myFunction() {
-  var inputNumber = '<input type="number" value="1" min="0" id="input1">'
-  var itog = '<span id="result"></span>';
+  var tableSum = document.createElement('table');
+    tableTotal.appendChild(tableSum);
+    tableSum.style.borderCollapse = 'collapse';
+    tableSum.style.borderTop = '1px solid grey';
+    tableSum.style.width = '100%';
+    tableSum.style.height = '80px';
+    tableSum.setAttribute('id', 'myTable-sum');
+
+    for(var i = 0; i < 2; i++) {
+          var tr = document.createElement('tr');
+          tableSum.appendChild(tr);
+          //tr.style.marginBottom = "5px";
+        for(var j = 0; j < 3; j++) {
+          var td = document.createElement('td');
+          tr.appendChild(td);
+          td.style.width = 'calc(100%/3)';
+          //td.style.borderBottom = '1px solid black';      
+          //td.style.paddingLeft = '5px';
+          if (i === 0 && j === 0) {
+            td.appendChild(document.createTextNode('Итого'));
+          } else if (i === 0 && j === 1) {
+            td.appendChild(document.createTextNode(''));
+            td.setAttribute('id', 'total-sum');
+          } else if (i === 0 && j === 2){
+            td.appendChild(document.createTextNode('К оплате'));
+          } else if (i === 1 && j === 0){
+            td.appendChild(document.createTextNode('Скидка'));
+          } else if (i === 1 && j === 1){
+            td.appendChild(document.createTextNode('------'));
+          } else if (i === 1 && j === 2){
+            td.appendChild(document.createTextNode(''));
+            td.setAttribute('id', 'total-sum-discount');
+          } 
+        }
+      }
 
     menuList.addEventListener('dblclick', function(event) {
       var table1 = document.getElementById("myTable");
@@ -95,7 +127,9 @@ for(var i = 0; i < 1; i++) {
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
+      cell3.setAttribute('class','cena')
       var cell4 = row.insertCell(3);
+      cell4.setAttribute('name','total')
       var target = event.target;
       function findId(goods) { 
           return goods.id === target.id;
@@ -109,22 +143,43 @@ for(var i = 0; i < 1; i++) {
       }
 
       cell1.innerHTML = elements[0];
-      cell2.innerHTML = inputNumber;
+      //cell2.innerHTML = inputNumber;
+      cell2.innerHTML = '<input type="number" name="quantity" min="1" max="99" value="1">';
       cell3.innerHTML = elements[2];
-      cell4.innerHTML = itog;
+      //cell3.innerHTML = '<input type="number" name="summ" min="1" max="99">';
+      //cell4.innerHTML = itog;
+      //cell4.innerHTML = '<input type="number" name="total" min="0" max="99999999">';
+      cell4.innerHTML = elements[2];
 
-      var input = document.getElementById('input1');
-      input.oninput = function() {
-        // input.addEventListener('input', function() {
-        //   var result = document.getElementById('result');
-        //   result.innerHTML = input.value*price;
-        // })
-        var result = document.getElementById('result');
-        result.innerHTML = input.value * cell3.innerHTML;
-      };
+      $(document).on('change','input[type="number"]',function(){    
+          var tr=$(this).closest('tr');
+           var Quantity= tr.find('input[name="quantity"]').val();
+           //var Price= tr.find('td:eq(2)').html();
+           var Price= tr.find('.cena').html();              
+          var total= (Quantity * Price);
+          console.log(total);
+          tr.find('[name="total"]').html(total);
+      });
 
+      // var input = document.getElementById('input1');
+      // input.oninput = function() {
+      //   // input.addEventListener('input', function() {
+      //   //   var result = document.getElementById('result');
+      //   //   result.innerHTML = input.value*price;
+      //   // })
+      //   var result = document.getElementById('result');
+      //   result.innerHTML = input.value * cell3.innerHTML;
+      // };
+
+
+
+// var input = document.getElementsByName('quantity')[0];
+// console.log(input);
+// input.addEventListener('input', function (evt) {
+//     console.log(this.value);
+// });
 // window.addEventListener('input', function (e) {
-//  console.log("input event detected! coming from this element:", e.target);
+//  console.log(this.value);
 // }, false);
 
       // alert(target.price);
@@ -133,27 +188,22 @@ for(var i = 0; i < 1; i++) {
       //console.log(goods);
 }, false);
 
-  var sum = document.getElementById('sum');
-  sum.addEventListener('click', function() {
-    alert('show sum');
-  });
-  //}
-  // var input1 = document.getElementById('input1');
-  // var input2 = document.getElementById('input2');
-  // input1.addEventListener('input', function (e) {
-  //   var value = parseInt(e.target.value);
-  //   if(Number.isFinite(value)) {
-  //     input2.value = value / 2;
-  //   } else {
-  //     input2.value = '';
-  //   }
-  // });
-  // input2.addEventListener('input', function (e) {
-  //   var value = parseInt(e.target.value);
-  //   if(Number.isFinite(value)) {
-  //     input1.value = value * 2;
-  //   } else {
-  //     input1.value = '';
-  //   }
-  // });
+    send.addEventListener('click', function() {
+      var table1 = document.getElementById("myTable");
+      var numberRow = table1.rows.length;
+      var totalSum = 0;
+      //console.log(numberRow)
+      for (m = 1; m < numberRow; m++) {
+        var sumRows = table1.rows[m].cells[3].innerHTML;
+        totalSum += +sumRows;
+        
+      }
+      //console.log(totalSum);
+      var totalSumElement = document.getElementById("total-sum");
+      totalSumElement.innerHTML = totalSum;
+      var totalSumDiscount = document.getElementById("total-sum-discount");
+      totalSumDiscount.innerHTML = totalSum;
+      totalSumDiscount.style.background = "yellow";
+      totalSumDiscount.style.fontSize = "25px";
+    })
 }
