@@ -4,5 +4,4 @@
 2. Open localhost:8080
 
 
-Click on main menu - open submenu,
-dblClick on submenu - choose dish
+Click on main menu - open submenu, dblClick on submenu - choose dish, click on "Все товары" - return in main menu
