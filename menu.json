@@ -1,0 +1,134 @@
+[
+    {
+        "title": "Говядина",
+        "id": "1",
+        "price": 200,
+        "thumbnailUrl": "/dist/images/beef.jpg",
+        "dblMenu": [
+             {
+                  "title": "Жареная говядина",
+                  "id": "7",
+                  "price": 10,
+                  "thumbnailUrl": "/dist/images/beef01.png"
+              },
+              {
+                  "title": "Вареная говядина",
+                  "id": "8",
+                  "price": 20,
+                  "thumbnailUrl": "/dist/images/beef02.jpg"
+              }           
+        ]
+    },
+    {
+        "title": "Курица",
+        "id": "2",
+        "price": 100,
+        "thumbnailUrl": "/dist/images/chicken.jpg",
+        "dblMenu": [
+             {
+                  "title": "Жареная курица",
+                  "id": "9",
+                  "price": 30,
+                  "thumbnailUrl": "/dist/images/chicken01.jpg"
+              },
+              {
+                  "title": "Вареная курица",
+                  "id": "10",
+                  "price": 140,
+                  "thumbnailUrl": "/dist/images/chicken02.jpg"
+              }           
+        ]
+    },
+    {
+        "title": "Свинина",
+        "id": "3",
+        "price": 110,
+        "thumbnailUrl": "/dist/images/pork.jpg",
+        "dblMenu": [
+             {
+                  "title": "Жареная свинина",
+                  "id": "11",
+                  "price": 210,
+                  "thumbnailUrl": "/dist/images/pork01.jpg"
+              },
+              {
+                  "title": "Вареная свинина",
+                  "id": "12",
+                  "price": 180,
+                  "thumbnailUrl": "/dist/images/pork02.jpg"
+              }           
+        ]
+    },
+    {
+        "title": "Суп",
+        "id": "4",
+        "price": 120,
+        "thumbnailUrl": "/dist/images/soup.jpg",
+        "dblMenu": [
+             {
+                  "title": "Суп 01",
+                  "id": "13",
+                  "price": 100,
+                  "thumbnailUrl": "/dist/images/soup01.jpg"
+              },
+              {
+                  "title": "Суп 02",
+                  "id": "14",
+                  "price": 150,
+                  "thumbnailUrl": "/dist/images/soup02.jpg"
+              }           
+        ]
+    },
+    {
+        "title": "Сок",
+        "id": "5",
+        "price": 130,
+        "thumbnailUrl": "/dist/images/juice.jpg",
+        "dblMenu": [
+             {
+                  "title": "Апельсиновый сок",
+                  "id": "15",
+                  "price": 40,
+                  "thumbnailUrl": "/dist/images/juice01.jpg"
+              },
+              {
+                  "title": "Томатный сок",
+                  "id": "16",
+                  "price": 42,
+                  "thumbnailUrl": "/dist/images/juice02.jpg"
+              },
+              {
+                  "title": "Яблочный сок",
+                  "id": "17",
+                  "price": 3,
+                  "thumbnailUrl": "/dist/images/juice03.jpg"
+              }           
+        ]
+    },
+    {
+        "title": "Фрукты",
+        "id": "6",
+        "price": 140,
+        "thumbnailUrl": "/dist/images/fruits.jpg",
+        "dblMenu": [
+             {
+                  "title": "Клубника",
+                  "id": "18",
+                  "price": 60,
+                  "thumbnailUrl": "/dist/images/fruits01.jpg"
+              },
+              {
+                  "title": "Бананы",
+                  "id": "19",
+                  "price": 35,
+                  "thumbnailUrl": "/dist/images/fruits02.jpg"
+              },
+              {
+                  "title": "Яблоки",
+                  "id": "20",
+                  "price": 35,
+                  "thumbnailUrl": "/dist/images/fruits03.jpg"
+              }           
+        ]
+    }
+]

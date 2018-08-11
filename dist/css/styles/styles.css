@@ -5993,14 +5993,11 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   line-height: 50px; }
 
 .border-full {
-  border: 1px solid black;
+  border: 1px solid #000000;
   box-sizing: border-box; }
 
 .navbar-light .my-navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); }
-
-.my-navbar {
-  padding: 0; }
 
 .my-navbar-toggler-icon {
   width: 1.0em;
@@ -6015,15 +6012,12 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   padding-left: 15px;
   margin-left: 15px; }
 
-.main-height {
-  min-height: 500px; }
-
 .main {
   background-image: url(../../images/board-bg.jpg);
   padding: 20px 15px; }
   .main_goods {
-    background-color: white;
-    border: 1px solid white;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
     box-sizing: border-box;
     padding: 5px 10px;
     margin-right: 3px; }
@@ -6032,11 +6026,12 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   display: grid;
   grid-template-columns: repeat(3, 150px);
   grid-template-rows: auto;
-  grid-gap: 10px; }
+  grid-gap: 10px;
+  list-style-type: none; }
 
 .code-img {
   padding: 5px 10px;
-  background-color: white;
+  background-color: #ffffff;
   margin-right: 10px;
   height: 26px; }
 
@@ -6052,6 +6047,13 @@ input[type=number] {
   height: 100px;
   cursor: pointer; }
 
+#start-menu {
+  cursor: pointer; }
+
+figcaption {
+  background-color: #ffffff;
+  padding-left: 10px; }
+
 .aside-button {
   min-height: 325px;
   margin-bottom: 10px; }
@@ -6062,21 +6064,16 @@ input[type=number] {
   border-collapse: collapse; }
 
 table#myTable tr:first-child {
-  border-bottom: 1px solid black; }
+  border-bottom: 1px solid #000000; }
 
 .table-sum {
   height: 80px; }
 
 table#myTable-sum tr:first-child {
-  border-top: 1px solid grey; }
+  border-top: 1px solid #808080; }
 
 table#myTable-sum td {
   width: calc(100%/3); }
 
-figcaption {
-  background-color: white;
-  padding-left: 10px; }
-
-#start-menu,
 #print-table {
   cursor: pointer; }

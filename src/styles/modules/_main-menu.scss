@@ -1,0 +1,43 @@
+.main {
+	background-image: url(../../images/board-bg.jpg);
+	padding: 20px 15px;
+	&_goods {
+		background-color: $white;
+		border: 1px solid $white;
+		box-sizing: border-box;
+		padding: 5px 10px;
+		margin-right: 3px;
+	}
+}	
+#menu-list {
+	display: grid;
+	grid-template-columns: repeat(3, 150px);
+	grid-template-rows: auto;
+	grid-gap: 10px;
+	list-style-type: none;
+}	
+.code-img {
+	padding: 5px 10px;
+	background-color: $white;
+	margin-right: 10px;
+	height: 26px;
+}
+.search-input {
+	width: 60px;
+	border: 0;
+}	
+input[type=number] {
+    width: 64px;
+}
+.img-size {
+	width: 150px;
+	height: 100px;
+	cursor: pointer;
+}
+#start-menu {
+	cursor: pointer;
+}
+figcaption {
+	background-color: $white;
+	padding-left: 10px;
+}

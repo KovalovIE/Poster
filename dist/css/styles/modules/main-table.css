@@ -1,0 +1,23 @@
+.aside-button {
+  min-height: 325px;
+  margin-bottom: 10px; }
+
+.aside-table,
+.table-sum {
+  width: 100%;
+  border-collapse: collapse; }
+
+table#myTable tr:first-child {
+  border-bottom: 1px solid black; }
+
+.table-sum {
+  height: 80px; }
+
+table#myTable-sum tr:first-child {
+  border-top: 1px solid grey; }
+
+table#myTable-sum td {
+  width: calc(100%/3); }
+
+#print-table {
+  cursor: pointer; }
